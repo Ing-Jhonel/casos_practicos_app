@@ -1,0 +1,16 @@
+program caso8;
+var
+  num1, num2, num3: integer;
+begin
+  writeln('Introduce el primer número:');
+  readln(num1);
+  writeln('Introduce el segundo número:');
+  readln(num2);
+  writeln('Introduce el tercer número:');
+  readln(num3);
+  
+  if (num1 > num2) and (num2 > num3) then
+    writeln('Los números están en orden decreciente.')
+  else
+    writeln('Los números NO están en orden decreciente.');
+end.
