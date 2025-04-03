@@ -1,0 +1,17 @@
+program caso6;
+var
+  importe, total: real;
+begin
+  writeln('Introduce el importe total de la compra:');
+  readln(importe);
+  
+  if importe >= 150 then
+  begin
+    total := importe * 0.9;
+    writeln('Se aplicó un descuento del 10%.');
+  end
+  else
+    total := importe;
+  
+  writeln('Total a pagar: S/.', total:0:2);
+end.
