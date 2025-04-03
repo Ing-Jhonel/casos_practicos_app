@@ -1,0 +1,24 @@
+program caso3;
+var
+  mes: integer;
+begin
+  writeln('Introduce un número del 1 al 12:');
+  readln(mes);
+  
+  case (mes) of
+    1: writeln('Enero');
+    2: writeln('Febrero');
+    3: writeln('Marzo');
+    4: writeln('Abril');
+    5: writeln('Mayo');
+    6: writeln('Junio');
+    7: writeln('Julio');
+    8: writeln('Agosto');
+    9: writeln('Septiembre');
+    10: writeln('Octubre');
+    11: writeln('Noviembre');
+    12: writeln('Diciembre');
+  else
+    writeln('Número inválido. Debe ser entre 1 y 12.');
+  end;
+end.
