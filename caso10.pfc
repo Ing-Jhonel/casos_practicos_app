@@ -1,0 +1,76 @@
+program caso10;
+var
+  clave, opcion: integer;
+  saldo, monto: real;
+  claveCorrecta, otraOperacion: boolean;
+  respuesta: char;
+begin
+  saldo := 1000;
+  claveCorrecta := false;
+  
+  writeln('Bienvenido al Cajero Automático');
+  writeln('Introduce tu clave (4 dígitos):');
+  readln(clave);
+  
+  if clave = 1234 then
+    claveCorrecta := true
+  else
+    writeln('Clave incorrecta. Acceso denegado.');
+  
+  if claveCorrecta then
+  begin
+    repeat
+      writeln('Selecciona una opción:');
+      writeln('1. Extraer dinero');
+      writeln('2. Depositar dinero');
+      writeln('3. Transferir dinero');
+      writeln('4. Consultar saldo');
+      readln(opcion);
+      
+      case opcion of
+        1: begin
+             writeln('Introduce el monto a extraer:');
+             readln(monto);
+             if monto <= saldo then
+             begin
+               saldo := saldo - monto;
+               writeln('Extracción realizada.');
+             end
+             else
+               writeln('Saldo insuficiente.');
+           end;
+        2: begin
+             writeln('Introduce el monto a depositar:');
+             readln(monto);
+             saldo := saldo + monto;
+             writeln('Depósito realizado.');
+           end;
+        3: begin
+             writeln('Introduce el monto a transferir:');
+             readln(monto);
+             if monto <= saldo then
+             begin
+               saldo := saldo - monto;
+               writeln('Transferencia realizada.');
+             end
+             else
+               writeln('Saldo insuficiente.');
+           end;
+        4: writeln('Tu saldo actual es: S/.', saldo:0:2);
+      else
+        writeln('Opción inválida.');
+      end;
+      
+      writeln('¿Deseas ver el resumen de la operación? (S/N)');
+      readln(respuesta);
+      if (respuesta = 'S') or (respuesta = 's') then
+        writeln('Saldo actual: S/.', saldo:0:2);
+      
+      writeln('¿Deseas realizar otra operación? (S/N)');
+      readln(respuesta);
+      otraOperacion := (respuesta = 'S') or (respuesta = 's');
+    until not otraOperacion;
+    
+    writeln('Gracias por usar nuestro cajero automático.');
+  end;
+end.
