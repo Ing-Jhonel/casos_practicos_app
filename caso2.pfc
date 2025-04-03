@@ -1,0 +1,13 @@
+program caso2;
+
+var
+	num, n: integer;
+begin
+	n:= 5;
+	writeln('Indique un numero: ');
+	readln(num);
+	if num mod 5 = 0 then
+		writeln('El numero ', num, ' es multiplo de ', n)
+	else
+		writeln('El numero ', num, ' NO es multiplo de ', n);
+end.
