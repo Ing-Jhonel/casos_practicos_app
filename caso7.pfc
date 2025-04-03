@@ -1,0 +1,14 @@
+program caso7;
+var
+  horas, minutos, segundos, total: integer;
+begin
+  writeln('Introduce las horas:');
+  readln(horas);
+  writeln('Introduce los minutos:');
+  readln(minutos);
+  writeln('Introduce los segundos:');
+  readln(segundos);
+  
+  total := horas * 3600 + minutos * 60 + segundos;
+  writeln('El tiempo total en segundos es: ', total);
+end.
