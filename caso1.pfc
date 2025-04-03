@@ -1,4 +1,8 @@
 program caso1;
+var
+  nombre: string;
 begin
-
+  writeln('Por favor, introduce tu nombre:');
+  readln(nombre);
+  writeln('Hola, ', nombre, '! Bienvenido/a.');
 end.
